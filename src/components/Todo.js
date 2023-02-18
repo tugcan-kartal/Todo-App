@@ -11,7 +11,24 @@ function Todo() {
     setTaskToDo(event.target.value);
   }
 
-  
+  const addTask=()=>{
+    setAllTasks([...allTasks,taskToDo]);
+    inputRef.current.value="";
+    inputRef.current.focus();
+  }
+
+  const removeItem=(taskToRemove)=>{
+    setAllTasks(allTasks.filter(task=>task !== taskToRemove));
+  }
+
+  const updateItem=(taskToUpdate)=>{
+
+    const newTask=prompt("Enter task to update");
+    setAllTasks(allTasks.map((item)=>{
+      return item === taskToUpdate ? newTask : item;
+    }))
+    
+  }
 
   return (
 
