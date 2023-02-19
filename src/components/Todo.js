@@ -12,7 +12,7 @@ function Todo() {
   }
 
   const addTask=()=>{
-    allTasks && setAllTasks([...allTasks,taskToDo]);
+    taskToDo && setAllTasks([...allTasks,taskToDo]);
     inputRef.current.value="";
     inputRef.current.focus();
   }
