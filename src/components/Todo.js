@@ -15,6 +15,7 @@ function Todo() {
     taskToDo && setAllTasks([...allTasks,taskToDo]);
     inputRef.current.value="";
     inputRef.current.focus();
+    setTaskToDo("");
   }
 
   const removeItem=(taskToRemove)=>{
